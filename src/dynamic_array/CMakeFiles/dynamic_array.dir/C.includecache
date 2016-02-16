@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mtf/cpp/src/dynamic_array/dynamic_array.c
+dynamic_array.h
+/home/mtf/cpp/src/dynamic_array/dynamic_array.h
+string.h
+-
+stdlib.h
+-
+stdio.h
+-
+
+/home/mtf/cpp/src/dynamic_array/dynamic_array.h
+

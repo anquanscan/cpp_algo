@@ -1,0 +1,1 @@
+/usr/bin/cc   -g3 -Wall -O2    CMakeFiles/dynamic_array.h.dir/dynamic_array.c.o  -o dynamic_array.h -rdynamic 
