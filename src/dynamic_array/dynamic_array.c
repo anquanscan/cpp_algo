@@ -7,26 +7,50 @@
 typedef struct Test
 {
 	int a;
-	int *b;
+	int b;
 	int c;
 }Test;
 
+
 void travel(void* data)
 {
-	Test *test = (Test*)data;
+//	Test *test = (Test*)data;
 
 //	printf("a=%d,b=%d,c=%d\n",test->a,*test->b,test->c);
 }
+
 
 void destroy_test(void* data)
 {
 	Test *test = (Test*)data;
 	if(test)
 	{
-		free(test->b);
-		test->b = NULL;
+//		free(test->b);
+//		test->b = NULL;
 	}
 }
+
+int find_test(const void *source,const void *find)
+{
+	Test *test_source  = (Test*)source;
+	Test *test_find  = (Test*)find;
+	if(test_source->a == test_find->a && test_source->b == test_find->b && test_source->c == test_find->c)
+		return 1;
+	return -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int dynamic_array_init(dynamic_array * dynamic_array,const unsigned int unit_size,const unsigned int init_count)
 {
@@ -98,7 +122,26 @@ void dynamic_array_destroy(dynamic_array * dynamic_array,const  dynamic_array_tr
 		dynamic_array->data = NULL;
 	}
 }
+int   dynamic_array_find(dynamic_array * dynamic_array,const  dynamic_array_find_fun fun,const void* find)
+{
+	int index = 0;
+	int ret = -1;
+	if(dynamic_array && dynamic_array->cur_index)
+	{
+		for(index = 0; index < dynamic_array->cur_index;index++)
+		{
+			ret = fun(dynamic_array->data+index*dynamic_array->unit_size,find);
+			if(ret == 1)
+			{
+				return index;
+			}
+		}
+	}
 
+	return -1;
+
+}
+/*
 int dynamic_array_empty(dynamic_array * dynamic_array)
 {
 	return dynamic_array->cur_index == 0 ? 1:0;
@@ -112,7 +155,7 @@ int dynamic_array_maxsize(dynamic_array * dynamic_array)
 {
 	return dynamic_array->last_index;
 }
-
+*/
 void test()
 {
 	dynamic_array dynamic_array = {};
@@ -123,14 +166,18 @@ void test()
 	{
 		Test test;
 		test.a = i;
-		test.b = (int*)malloc(4);
-		*test.b = i;
+		test.b = i;
 		test.c = i;
 		dynamic_array_push(&dynamic_array,&test);
 	}
 	dynamic_array_travel(&dynamic_array,travel);
 
-	dynamic_array_destroy(&dynamic_array,destroy_test);
+	
+	Test test={2,2,3};
+	printf("%d\n",dynamic_array_find(&dynamic_array,find_test,&test));
+
+
+	dynamic_array_destroy(&dynamic_array,NULL);
 }
 
 
