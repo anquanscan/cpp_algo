@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/mtf/cpp/src/dynamic_array
 CMakeFiles/dynamic_array.dir/all:
 	$(MAKE) -f CMakeFiles/dynamic_array.dir/build.make CMakeFiles/dynamic_array.dir/depend
 	$(MAKE) -f CMakeFiles/dynamic_array.dir/build.make CMakeFiles/dynamic_array.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/mtf/cpp/src/dynamic_array/CMakeFiles 
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/mtf/cpp/src/dynamic_array/CMakeFiles  1
 	@echo "Built target dynamic_array"
 .PHONY : CMakeFiles/dynamic_array.dir/all
 
@@ -69,7 +69,7 @@ all: CMakeFiles/dynamic_array.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dynamic_array.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtf/cpp/src/dynamic_array/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtf/cpp/src/dynamic_array/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dynamic_array.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtf/cpp/src/dynamic_array/CMakeFiles 0
 .PHONY : CMakeFiles/dynamic_array.dir/rule
