@@ -141,7 +141,15 @@ int   dynamic_array_find(dynamic_array * dynamic_array,const  dynamic_array_find
 	return -1;
 
 }
-/*
+void * dynamic_array_getByIndex(dynamic_array * dynamic_array,const int index)
+{
+	if(!dynamic_array_empty(dynamic_array) && index > dynamic_array_size(dynamic_array))
+	{
+		return NULL;
+	}
+
+	return NULL;
+}
 int dynamic_array_empty(dynamic_array * dynamic_array)
 {
 	return dynamic_array->cur_index == 0 ? 1:0;
@@ -155,7 +163,6 @@ int dynamic_array_maxsize(dynamic_array * dynamic_array)
 {
 	return dynamic_array->last_index;
 }
-*/
 void test()
 {
 	dynamic_array dynamic_array = {};
@@ -173,7 +180,7 @@ void test()
 	dynamic_array_travel(&dynamic_array,travel);
 
 	
-	Test test={2,2,3};
+	Test test={0,0,0};
 	printf("%d\n",dynamic_array_find(&dynamic_array,find_test,&test));
 
 

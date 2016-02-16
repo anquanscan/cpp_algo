@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/mtf/cpp/src/dynamic_array/dynamic_array.c
+/Users/lambertfly/Desktop/work/cpp/src/dynamic_array/dynamic_array.c
 dynamic_array.h
-/home/mtf/cpp/src/dynamic_array/dynamic_array.h
+/Users/lambertfly/Desktop/work/cpp/src/dynamic_array/dynamic_array.h
 string.h
 -
 stdlib.h
@@ -16,5 +16,5 @@ stdlib.h
 stdio.h
 -
 
-/home/mtf/cpp/src/dynamic_array/dynamic_array.h
+/Users/lambertfly/Desktop/work/cpp/src/dynamic_array/dynamic_array.h
 

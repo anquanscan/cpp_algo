@@ -1,1 +1,1 @@
-/usr/bin/cc   -g3 -Wall -O2    CMakeFiles/dynamic_array.dir/dynamic_array.c.o  -o dynamic_array -rdynamic 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -g3 -Wall -O2 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/dynamic_array.dir/dynamic_array.c.o  -o dynamic_array  
